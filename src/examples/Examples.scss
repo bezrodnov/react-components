@@ -1,9 +1,23 @@
 .examples {
   padding: 1rem;
+  padding-right: 0;
+  height: calc(100% - 2rem);
+  width: calc(100% - 1rem);
+  overflow: hidden;
 
-  .progress-graph-example {
-    #progress-graph {
-      width: 400px !important;
-    }
+  & > .container {
+    overflow: auto;
+    height: 100%;
+
+    // > div {
+    //   > * {
+    //     &:nth-child(2n + 1) {
+    //       background-color: var(--background-color);
+    //     }
+    //     &:nth-child(2n) {
+    //       background-color: var(--background-color-striped);
+    //     }
+    //   }
+    // }
   }
 }
