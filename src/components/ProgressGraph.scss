@@ -1,0 +1,103 @@
+@import "../../scss/config";
+
+.progress-graph {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--border-color);
+  border-left-width: 8px;
+  border-top-width: 8px;
+
+  .step {
+    display: flex;
+    height: 100px;
+    border-bottom: 1px solid var(--border-color);
+    opacity: 0.5;
+    @include easeIn;
+
+    &:nth-child(2n + 1) {
+      background-color: var(--background-color);
+    }
+
+    &:nth-child(2n) {
+      background-color: var(--background-color-striped);
+    }
+
+    .progress-diagram {
+      min-width: 6rem;
+      width: 6rem;
+      position: relative;
+      z-index: 1;
+
+      .step-label {
+        color: var(--inactive-color);
+      }
+
+      .step-no {
+        position: absolute;
+        right: 1rem;
+        top: 1.5rem;
+        color: var(--text-color-inverse);
+        background-color: var(--inactive-color);
+        font-size: 12pt;
+        font-weight: bold;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        border-radius: 50%;
+        @include easeIn;
+        transition-delay: $transition-duration;
+      }
+    }
+
+    .description {
+      flex: 1;
+      padding-top: 1.5rem;
+
+      .title {
+        font-size: 16pt;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        font-size: 12pt;
+      }
+    }
+
+    .estimate {
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+      color: var(--text-color-light);
+      font-weight: bold;
+    }
+
+    &.completed {
+      opacity: 1;
+
+      .progress-diagram {
+        .step-no {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+
+  .progress-line {
+    position: absolute;
+    left: 3.75rem;
+    top: 2rem;
+    width: 0.5rem;
+    z-index: 0;
+    height: 0;
+    background-color: var(--secondary-color);
+    border-radius: 0.25rem;
+    @include easeIn;
+  }
+}

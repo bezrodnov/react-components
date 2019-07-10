@@ -1,0 +1,27 @@
+@import "../../scss/config";
+
+.navigator {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+
+  a {
+    padding: 0.5em;
+    color: var(--primary-color);
+    text-align: center;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 1em;
+    text-decoration: none;
+    margin: 0.5em;
+    font-size: 1em;
+    line-height: 2em;
+    @include easeIn;
+
+    &:hover {
+      border-color: var(--primary-color);
+    }
+  }
+}

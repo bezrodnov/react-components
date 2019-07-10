@@ -1,0 +1,28 @@
+:root {
+  --text-color: #333;
+  --text-color-light: #888;
+  --text-color-inverse: #fff;
+
+  --background-color: #eee;
+  --background-color-striped: #fff;
+
+  --primary-color: #fff;
+  --secondary-color: #68f;
+  --border-color: #ccc;
+
+  --inactive-color: #ccc;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
