@@ -9,7 +9,7 @@ import './ProgressGraphExample.scss';
 
 class ProgressGraphExample extends Component {
   state = {
-    currentStep: 1,
+    currentStep: 0,
     steps: [
       {
         title: 'First step',
@@ -27,6 +27,7 @@ class ProgressGraphExample extends Component {
         estimate: '20 - 25 min',
       },
     ],
+    activeCodeEffect: null,
   };
 
   componentDidMount() {
@@ -34,23 +35,46 @@ class ProgressGraphExample extends Component {
   }
 
   render() {
-    const { currentStep, steps } = this.state;
+    const { currentStep, steps, activeCodeEffect } = this.state;
     return (
       <div className="progress-graph-example">
         <ProgressGraph currentStep={currentStep} steps={steps} />
         <div className="mutations">
-          <pre>
-            <code className="language-javascript">{`currentStep = 0;`}</code>
-          </pre>
-          <pre>
-            <code className="language-javascript">{`currentStep = 1;`}</code>
-          </pre>
-          <pre>
-            <code className="language-javascript">{`currentStep = 2;`}</code>
-          </pre>
-          <pre>
-            <code className="language-javascript">{`currentStep = 3;`}</code>
-          </pre>
+          <CodeEffect
+            code={`currentStep = 0; // no steps are completed yet `}
+            active={activeCodeEffect === 0}
+            onActivate={() => {
+              this.setState({ currentStep: 0, activeCodeEffect: 0 });
+            }}
+          />
+          <CodeEffect
+            code={`currentStep = 1`}
+            active={activeCodeEffect === 1}
+            onActivate={() => {
+              this.setState({ currentStep: 1, activeCodeEffect: 1 });
+            }}
+          />
+          <CodeEffect
+            code={`currentStep = 2`}
+            active={activeCodeEffect === 2}
+            onActivate={() => {
+              this.setState({ currentStep: 2, activeCodeEffect: 2 });
+            }}
+          />
+          <CodeEffect
+            code={`currentStep = 3`}
+            active={activeCodeEffect === 3}
+            onActivate={() => {
+              this.setState({ currentStep: 3, activeCodeEffect: 3 });
+            }}
+          />
+          <CodeEffect
+            code={`currentStep = 4; // all steps are completed`}
+            active={activeCodeEffect === 4}
+            onActivate={() => {
+              this.setState({ currentStep: 4, activeCodeEffect: 4 });
+            }}
+          />
         </div>
       </div>
     );
@@ -58,5 +82,20 @@ class ProgressGraphExample extends Component {
 }
 
 ProgressGraphExample.contextType = ScrollContext;
+
+class CodeEffect extends Component {
+  render() {
+    return (
+      <pre
+        onClick={this.props.onActivate}
+        tabIndex="0"
+        role="button"
+        className={`language-javascript ${this.props.active ? 'active' : ''}`}
+      >
+        <code className="language-javascript">{this.props.code}</code>
+      </pre>
+    );
+  }
+}
 
 export default ProgressGraphExample;

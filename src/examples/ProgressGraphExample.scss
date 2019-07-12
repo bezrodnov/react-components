@@ -5,6 +5,7 @@
   align-items: flex-start;
 
   .progress-graph {
+    margin-top: 3rem;
     width: 400px;
   }
 
@@ -13,5 +14,15 @@
     flex-direction: column;
     padding: 2rem;
     flex: 1;
+
+    pre {
+      cursor: pointer;
+      
+      &.active {
+        -webkit-box-shadow: 0 0 10px 10px var(--secondary-color);
+        -moz-box-shadow: 0 0 10px 10px var(--secondary-color);
+        box-shadow: 0 0 10px 10px var(--secondary-color);
+      }
+    }
   }
 }
