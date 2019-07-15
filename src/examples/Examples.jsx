@@ -7,21 +7,12 @@ import ProgressGraphExample from './ProgressGraphExample';
 import './Examples.scss';
 
 class Examples extends Component {
-  state = {
-    scrollPos: 0,
-  };
-
-  onScroll = e => {
-    this.setState({ scrollPos: e.target.scrollTop });
-  };
-
   render() {
     return (
       <div className="examples">
-        <Scrollbars className="container" onScroll={this.onScroll}>
+        <Scrollbars className="container">
           <ScrollContext.Provider value={this.state}>
             <ProgressGraphExample />
-            <div style={{ height: 3000 }} />
           </ScrollContext.Provider>
         </Scrollbars>
       </div>
