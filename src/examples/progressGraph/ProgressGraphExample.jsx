@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Prism from 'prismjs';
-import '../css/prism.css';
+import '../../css/prism.css';
 
-import ProgressGraph from '../components/ProgressGraph';
-import ScrollContext from './ScrollContext';
+import ProgressGraph from '../../components/progressGraph/ProgressGraph';
 
 import './ProgressGraphExample.scss';
 
@@ -80,8 +79,6 @@ class ProgressGraphExample extends Component {
     );
   }
 }
-
-ProgressGraphExample.contextType = ScrollContext;
 
 class CodeEffect extends Component {
   render() {

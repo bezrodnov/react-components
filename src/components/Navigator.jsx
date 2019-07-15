@@ -10,6 +10,9 @@ class Navigator extends Component {
         <NavLink to="/progressGraph" strict activeClassName="active">
           Progress Graph
         </NavLink>
+        <NavLink to="/plainMenu" strict activeClassName="active">
+          PlainMenu
+        </NavLink>
       </div>
     );
   }

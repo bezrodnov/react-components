@@ -8,16 +8,5 @@
   & > .container {
     overflow: auto;
     height: 100%;
-
-    // > div {
-    //   > * {
-    //     &:nth-child(2n + 1) {
-    //       background-color: var(--background-color);
-    //     }
-    //     &:nth-child(2n) {
-    //       background-color: var(--background-color-striped);
-    //     }
-    //   }
-    // }
   }
 }

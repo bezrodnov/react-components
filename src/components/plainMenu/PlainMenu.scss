@@ -1,0 +1,33 @@
+@import "../../scss/config";
+
+.plain-menu {
+  .menu-item {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    font-size: 14pt;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    outline: none;
+    cursor: pointer;
+    transition: color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
+    
+    &-enter {
+      transform: translateX(-100%);
+    }
+
+    &-enter-active,
+    &-enter-done {
+      transform: translateX(0);
+    }
+
+    &-exit,
+    &-exit-active {
+      transform: translateX(-100%);
+    }
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}

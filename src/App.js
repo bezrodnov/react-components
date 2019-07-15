@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navigator from './components/Navigator';
 import Examples from './examples/Examples';
 
-import './App.scss';
+import './scss/App.scss';
 
 class App extends Component {
   render() {
