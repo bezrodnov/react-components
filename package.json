@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",
